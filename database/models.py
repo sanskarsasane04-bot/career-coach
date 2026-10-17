@@ -1,0 +1,155 @@
+from database import db
+
+class User(db.Model):
+
+    __tablename__ = "users"
+
+    id = db.Column(db.Integer, primary_key=True)
+
+    full_name = db.Column(db.String(100), nullable=False)
+
+    email = db.Column(db.String(120), unique=True, nullable=False)
+
+    profile_photo = db.Column(db.String(255))
+
+    password = db.Column(db.String(255), nullable=False)
+
+    role = db.Column(db.String(20), default="student")
+
+    created_at = db.Column(db.DateTime, server_default=db.func.now())
+
+    chat_sessions = db.relationship(
+    "ChatSession",
+    backref="user",
+    lazy=True,
+    cascade="all, delete"
+)
+class Job(db.Model):
+
+    __tablename__ = "jobs"
+
+    id = db.Column(db.Integer, primary_key=True)
+
+    title = db.Column(db.String(100), nullable=False)
+
+    company = db.Column(db.String(100), nullable=False)
+
+    location = db.Column(db.String(100))
+
+    salary = db.Column(db.String(50))
+
+    description = db.Column(db.Text)
+
+    posted_by = db.Column(db.Integer)
+
+    created_at = db.Column(db.DateTime, server_default=db.func.now())
+
+
+class Resume(db.Model):
+
+    __tablename__ = "resumes"
+
+    id = db.Column(db.Integer, primary_key=True)
+
+    user_id = db.Column(
+        db.Integer,
+        db.ForeignKey("users.id"),
+        nullable=False
+    )
+
+    name = db.Column(db.String(100))
+
+    email = db.Column(db.String(100))
+
+    phone = db.Column(db.String(20))
+
+    summary = db.Column(db.Text)
+
+    education = db.Column(db.Text)
+
+    skills = db.Column(db.Text)
+
+    projects = db.Column(db.Text)
+
+    experience = db.Column(db.Text)
+
+    certifications = db.Column(db.Text)
+
+    languages = db.Column(db.Text)
+
+    github = db.Column(db.String(200))
+
+    linkedin = db.Column(db.String(200))
+
+    template = db.Column(db.String(50))
+
+    photo = db.Column(db.String(200))
+
+    created_at = db.Column(
+        db.DateTime,
+        server_default=db.func.now()
+    )
+class JobApplication(db.Model):
+
+    __tablename__ = "job_applications"
+
+    id = db.Column(db.Integer, primary_key=True)
+
+    job_id = db.Column(
+        db.Integer,
+        db.ForeignKey("jobs.id"),
+        nullable=False
+    )
+
+    user_id = db.Column(
+        db.Integer,
+        db.ForeignKey("users.id"),
+        nullable=False
+    )
+
+    status = db.Column(
+        db.String(20),
+        default="Applied"
+    )
+
+    applied_at = db.Column(
+        db.DateTime,
+        server_default=db.func.now()
+    )
+
+from datetime import datetime
+
+class ChatSession(db.Model):
+    __tablename__ = "chat_sessions"
+
+    id = db.Column(db.Integer, primary_key=True)
+    user_id = db.Column(db.Integer, db.ForeignKey("users.id"))
+    title = db.Column(db.String(200), default="New Chat")
+    created_at = db.Column(db.DateTime, default=datetime.utcnow)
+
+    messages = db.relationship(
+        "ChatMessage",
+        backref="session",
+        lazy=True,
+        cascade="all, delete"
+    )
+
+
+class ChatMessage(db.Model):
+    __tablename__ = "chat_messages"
+
+    id = db.Column(db.Integer, primary_key=True)
+
+    session_id = db.Column(
+        db.Integer,
+        db.ForeignKey("chat_sessions.id")
+    )
+
+    sender = db.Column(db.String(20))
+
+    message = db.Column(db.Text)
+
+    created_at = db.Column(
+        db.DateTime,
+        default=datetime.utcnow
+    )

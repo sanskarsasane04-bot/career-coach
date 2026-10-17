@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+
+{% block title %}{{ course_name }} Roadmap{% endblock %}
+
+{% block content %}
+
+<div class="container py-5">
+
+    <div class="feature-card p-5">
+
+        <h1 class="text-center text-info mb-5">
+            🚀 {{ course_name }} Roadmap
+        </h1>
+
+        {% for step in roadmap %}
+
+        <div class="card mb-3 shadow">
+
+            <div class="card-body">
+
+                <h5 class="text-primary">
+                    Step {{ loop.index }}
+                </h5>
+
+                <p class="mb-0">
+                    {{ step }}
+                </p>
+
+            </div>
+
+        </div>
+
+        {% endfor %}
+
+        <div class="text-center mt-4">
+
+            <a href="{{ url_for('career') }}" class="btn btn-primary">
+                ← Back
+            </a>
+
+        </div>
+
+    </div>
+
+</div>
+
+{% endblock %}

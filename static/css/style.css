@@ -1,0 +1,1115 @@
+/* =====================================
+   CAREER COACH AI V2 - PART 1
+   Theme + Background + Navbar
+===================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Poppins',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+
+    background:#080b16;
+    color:#ffffff;
+    overflow-x:hidden;
+    min-height:100vh;
+    position:relative;
+
+}
+
+/* Animated Background */
+
+body::before{
+
+    content:"";
+    position:fixed;
+    inset:0;
+
+    background:
+    radial-gradient(circle at 15% 20%,rgba(0,255,255,.12),transparent 25%),
+    radial-gradient(circle at 80% 30%,rgba(140,0,255,.15),transparent 30%),
+    radial-gradient(circle at 50% 80%,rgba(0,180,255,.10),transparent 25%);
+
+    z-index:-2;
+
+}
+
+body::after{
+
+    content:"";
+    position:fixed;
+    inset:0;
+
+    background:
+    linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);
+
+    background-size:45px 45px;
+
+    opacity:.25;
+
+    z-index:-1;
+
+}
+
+/* Main Content */
+
+.main-content{
+
+    width:100%;
+    max-width:1400px;
+    margin:auto;
+    padding:40px 20px;
+
+}
+
+/* Navbar */
+
+.glass-navbar{
+
+    background:rgba(12,16,30,.75)!important;
+
+    backdrop-filter:blur(18px);
+
+    border-bottom:1px solid rgba(255,255,255,.08);
+
+    box-shadow:0 0 25px rgba(0,255,255,.10);
+
+}
+
+/* Logo */
+
+.logo{
+
+    font-size:28px;
+
+    font-weight:700;
+
+    color:#00d9ff!important;
+
+    text-shadow:0 0 18px #00d9ff;
+
+}
+
+/* Nav Links */
+
+.nav-link{
+
+    color:white!important;
+
+    margin-left:10px;
+
+    transition:.35s;
+
+    font-weight:500;
+
+}
+
+.nav-link:hover{
+
+    color:#00d9ff!important;
+
+    text-shadow:0 0 12px #00d9ff;
+
+}
+
+/* User Box */
+
+.user-box{
+
+    padding:8px 16px;
+
+    border-radius:30px;
+
+    background:rgba(255,255,255,.08);
+
+    border:1px solid rgba(0,217,255,.4);
+
+    box-shadow:0 0 18px rgba(0,217,255,.18);
+
+}
+
+/* Footer */
+
+.footer-glass{
+
+    margin-top:80px;
+
+    padding:40px 20px;
+
+    background:rgba(10,15,28,.75);
+
+    backdrop-filter:blur(15px);
+
+    border-top:1px solid rgba(255,255,255,.08);
+
+}
+
+.footer-glass h4{
+
+    color:#00d9ff;
+
+    text-shadow:0 0 15px #00d9ff;
+
+}
+
+.footer-glass p{
+
+    color:#d7d7d7;
+
+}
+
+/* Headings */
+
+h1,h2,h3,h4,h5,h6{
+
+    font-weight:700;
+
+}
+
+/* Links */
+
+a{
+
+    text-decoration:none;
+
+}
+/* =====================================
+   CAREER COACH AI V2 - PART 2
+   Hero + Buttons + Cards
+===================================== */
+
+/* Hero Section */
+
+.hero-section{
+
+    padding:90px 0;
+
+}
+
+.hero-title{
+
+    font-size:65px;
+    font-weight:800;
+    line-height:1.2;
+
+}
+
+.hero-title span{
+
+    color:#00d9ff;
+
+    text-shadow:
+    0 0 10px #00d9ff,
+    0 0 25px #00d9ff,
+    0 0 45px #00d9ff;
+
+}
+
+.hero-subtitle{
+
+    font-size:20px;
+    color:#cfcfcf;
+    margin-top:25px;
+    line-height:1.8;
+
+}
+
+.hero-image{
+
+    width:100%;
+    border-radius:25px;
+    margin-left:40px;
+
+    border:2px solid rgba(0,217,255,.3);
+
+    box-shadow:
+    0 0 25px rgba(0,217,255,.3),
+    0 0 60px rgba(0,217,255,.15);
+
+    transition:.5s;
+
+}
+
+.hero-image:hover{
+
+    transform:scale(1.03);
+
+    box-shadow:
+    0 0 40px #00d9ff,
+    0 0 80px rgba(0,217,255,.5);
+
+}
+
+/* Premium Button */
+
+.btn-glow{
+
+    background:linear-gradient(90deg,#00d9ff,#0077ff);
+
+    color:white;
+
+    padding:15px 38px;
+
+    border:none;
+
+    border-radius:50px;
+
+    font-weight:600;
+
+    transition:.35s;
+
+    box-shadow:0 0 25px rgba(0,217,255,.5);
+
+}
+
+.btn-glow:hover{
+
+    transform:translateY(-5px);
+
+    color:white;
+
+    box-shadow:
+    0 0 20px #00d9ff,
+    0 0 45px #00d9ff;
+
+}
+
+/* Outline Button */
+
+.btn-outline-light{
+
+    border:2px solid #00d9ff;
+
+    color:#00d9ff;
+
+    border-radius:50px;
+
+    padding:14px 35px;
+
+    transition:.35s;
+
+}
+
+.btn-outline-light:hover{
+
+    background:#00d9ff;
+
+    color:#000;
+
+    box-shadow:
+    0 0 20px #00d9ff,
+    0 0 40px #00d9ff;
+
+}
+
+/* Feature Cards */
+
+.feature-card{
+
+    background:rgba(255,255,255,.05);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    backdrop-filter:blur(18px);
+
+    border-radius:22px;
+
+    padding:20px;
+
+    overflow:hidden;
+
+    transition:.4s;
+
+    height:100%;
+
+}
+
+.feature-card:hover{
+
+    transform:translateY(-12px);
+
+    border:1px solid #00d9ff;
+
+    box-shadow:
+    0 0 18px rgba(0,217,255,.5),
+    0 0 45px rgba(0,217,255,.25);
+
+}
+
+/* All Cards */
+
+.card{
+
+    background:rgba(255,255,255,.05);
+
+    color:white;
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:20px;
+
+    transition:.35s;
+
+}
+
+.card:hover{
+
+    transform:translateY(-10px);
+
+    border-color:#00d9ff;
+
+    box-shadow:
+    0 0 25px rgba(0,217,255,.45);
+
+}
+
+.card-body{
+
+    padding:30px;
+
+}
+
+.card h4{
+
+    color:#00d9ff;
+
+    margin-bottom:15px;
+
+}
+
+.card p{
+
+    color:#d7d7d7;
+
+    line-height:1.7;
+
+}
+/* =====================================
+   CAREER COACH AI V2 - PART 3
+   Dashboard + Forms + Tables + Profile
+===================================== */
+
+/* Dashboard Cards */
+
+.dashboard-card{
+
+    background:rgba(255,255,255,.05);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:22px;
+
+    padding:30px;
+
+    text-align:center;
+
+    transition:.4s;
+
+    backdrop-filter:blur(18px);
+
+}
+
+.dashboard-card:hover{
+
+    transform:translateY(-10px);
+
+    border-color:#00d9ff;
+
+    box-shadow:
+    0 0 20px rgba(0,217,255,.45),
+    0 0 50px rgba(0,217,255,.20);
+
+}
+
+.dashboard-card i{
+
+    font-size:55px;
+
+    color:#00d9ff;
+
+    margin-bottom:20px;
+
+    text-shadow:0 0 20px #00d9ff;
+
+}
+
+.dashboard-card h3{
+
+    color:white;
+
+    font-weight:700;
+
+}
+
+.dashboard-card p{
+
+    color:#d8d8d8;
+
+}
+
+/* Forms */
+
+.form-control,
+.form-select{
+
+    background:rgba(255,255,255,.05);
+
+    color:white;
+
+    border:1px solid rgba(255,255,255,.15);
+
+    border-radius:14px;
+
+    padding:14px;
+
+}
+
+.form-control:focus,
+.form-select:focus{
+
+    background:rgba(255,255,255,.08);
+
+    color:white;
+
+    border-color:#00d9ff;
+
+    box-shadow:
+    0 0 15px rgba(0,217,255,.5);
+
+}
+
+/* Placeholder */
+
+.form-control::placeholder{
+
+    color:#bdbdbd;
+
+}
+
+/* Labels */
+
+label{
+
+    color:#00d9ff;
+
+    font-weight:600;
+
+    margin-bottom:8px;
+
+}
+
+/* Tables */
+
+.table{
+
+    color:white;
+
+    border-radius:15px;
+
+    overflow:hidden;
+
+}
+
+.table thead{
+
+    background:#00d9ff;
+
+    color:#000;
+
+}
+
+.table tbody tr{
+
+    background:rgba(255,255,255,.04);
+
+    transition:.3s;
+
+}
+
+.table tbody tr:hover{
+
+    background:rgba(0,217,255,.15);
+
+}
+
+/* Job Cards */
+
+.job-card{
+
+    background:rgba(255,255,255,.05);
+
+    border:1px solid rgba(255,255,255,.08);
+
+    border-radius:20px;
+
+    padding:25px;
+
+    transition:.35s;
+
+}
+
+.job-card:hover{
+
+    transform:translateY(-8px);
+
+    border-color:#00d9ff;
+
+    box-shadow:
+    0 0 22px rgba(0,217,255,.45);
+
+}
+
+.job-card h3{
+
+    color:#00d9ff;
+
+}
+
+/* Profile */
+
+.profile-img{
+
+    width:170px;
+
+    height:170px;
+
+    border-radius:50%;
+
+    object-fit:cover;
+
+    border:4px solid #00d9ff;
+
+    box-shadow:
+    0 0 25px rgba(0,217,255,.45);
+
+}
+
+/* Alerts */
+
+.alert{
+
+    border:none;
+
+    border-radius:15px;
+
+    background:rgba(0,217,255,.15);
+
+    color:white;
+
+}
+/* =====================================
+   CAREER COACH AI V2 - PART 4
+   Animations + Effects + Responsive
+===================================== */
+
+/* Smooth Animation */
+
+*{
+    transition:.3s ease;
+}
+
+/* Glow Animation */
+
+@keyframes glow{
+
+    0%{
+
+        box-shadow:0 0 10px rgba(0,217,255,.2);
+
+    }
+
+    50%{
+
+        box-shadow:
+        0 0 20px rgba(0,217,255,.6),
+        0 0 40px rgba(0,217,255,.3);
+
+    }
+
+    100%{
+
+        box-shadow:0 0 10px rgba(0,217,255,.2);
+
+    }
+
+}
+
+/* Floating Animation */
+
+@keyframes floating{
+
+    0%{
+
+        transform:translateY(0px);
+
+    }
+
+    50%{
+
+        transform:translateY(-12px);
+
+    }
+
+    100%{
+
+        transform:translateY(0px);
+
+    }
+
+}
+
+/* Hero Image */
+
+.hero-image{
+
+    animation:floating 5s ease-in-out infinite;
+
+}
+
+/* Buttons */
+
+.btn{
+
+    transition:.35s;
+
+}
+
+.btn:hover{
+
+    transform:translateY(-5px);
+
+}
+
+/* Card Glow */
+
+.card:hover,
+.feature-card:hover,
+.dashboard-card:hover,
+.job-card:hover{
+
+    animation:glow 2s infinite;
+
+}
+
+/* Scrollbar */
+
+::-webkit-scrollbar{
+
+    width:10px;
+
+}
+
+::-webkit-scrollbar-track{
+
+    background:#080b16;
+
+}
+
+::-webkit-scrollbar-thumb{
+
+    background:#00d9ff;
+
+    border-radius:20px;
+
+}
+
+::-webkit-scrollbar-thumb:hover{
+
+    background:#00ffff;
+
+}
+
+/* Selection */
+
+::selection{
+
+    background:#00d9ff;
+
+    color:black;
+
+}
+
+/* Horizontal Line */
+
+hr{
+
+    border:1px solid rgba(255,255,255,.08);
+
+}
+
+/* Responsive */
+
+@media(max-width:992px){
+
+.hero-title{
+
+    font-size:48px;
+
+}
+
+.hero-image{
+
+    margin-left:0;
+
+    margin-top:40px;
+
+}
+
+.navbar-nav{
+
+    margin-top:20px;
+
+}
+
+}
+
+@media(max-width:768px){
+
+.hero-title{
+
+    font-size:36px;
+
+}
+
+.hero-subtitle{
+
+    font-size:17px;
+
+}
+
+.logo{
+
+    font-size:22px;
+
+}
+
+.dashboard-card{
+
+    margin-bottom:20px;
+
+}
+
+.card{
+
+    margin-bottom:20px;
+
+}
+
+.hero-section{
+
+    padding:60px 0;
+
+}
+
+}
+
+@media(max-width:576px){
+
+.main-content{
+
+    padding:20px;
+
+}
+
+.hero-title{
+
+    font-size:30px;
+
+}
+
+.btn-glow,
+.btn-outline-light{
+
+    width:100%;
+
+    margin-top:12px;
+
+}
+
+.user-box{
+
+    display:none;
+
+}
+
+}
+select {
+    width: 100%;
+    padding: 12px;
+    background: #1b1f3a;
+    color: #ffffff;
+    border: 2px solid #00e5ff;
+    border-radius: 10px;
+    font-size: 16px;
+    outline: none;
+}
+
+select:focus {
+    border-color: #00ffff;
+    box-shadow: 0 0 10px #00e5ff;
+}
+
+option {
+    background: #1b1f3a;
+    color: #ffffff;
+}
+/* ==============================
+PROFESSIONAL RESUME PREVIEW
+==============================*/
+
+.resume-preview{
+    display:flex;
+    background:#ffffff;
+    color:#222;
+    border-radius:18px;
+    overflow:hidden;
+    margin-top:40px;
+    box-shadow:0 15px 40px rgba(0,0,0,.45);
+}
+
+.resume-left{
+    width:30%;
+    background:#f4f4f4;
+    padding:30px;
+}
+
+.resume-photo{
+    width:170px;
+    height:170px;
+    border-radius:50%;
+    object-fit:cover;
+    display:block;
+    margin:auto;
+    border:5px solid #5b224c;
+}
+
+.resume-left h3{
+    color:#5b224c;
+    margin-top:35px;
+    margin-bottom:15px;
+    border-bottom:2px solid #5b224c;
+    padding-bottom:8px;
+    font-size:22px;
+    font-weight:700;
+}
+
+.resume-left p{
+    color:#333;
+    line-height:1.8;
+    font-size:15px;
+    word-break:break-word;
+}
+
+.resume-right{
+    width:70%;
+    padding:35px;
+}
+
+.resume-header{
+    background:#5b224c;
+    color:white;
+    padding:35px;
+    margin:-35px -35px 35px -35px;
+}
+
+.resume-header h1{
+    font-size:48px;
+    font-weight:800;
+}
+
+.resume-header h4{
+    margin-top:10px;
+    letter-spacing:2px;
+    color:#eee;
+}
+
+.resume-right h2{
+    color:#5b224c;
+    margin-top:28px;
+    margin-bottom:12px;
+    border-bottom:2px solid #5b224c;
+    padding-bottom:8px;
+    font-size:24px;
+}
+
+.resume-right p{
+    color:#333;
+    font-size:16px;
+    line-height:1.8;
+    white-space:pre-line;
+}
+
+@media(max-width:900px){
+
+.resume-preview{
+display:block;
+}
+
+.resume-left{
+width:100%;
+}
+
+.resume-right{
+width:100%;
+}
+
+.resume-header{
+margin:-35px;
+margin-bottom:30px;
+}
+
+.resume-header h1{
+font-size:34px;
+}
+
+}
+/* Professional Resume Preview */
+
+.professional-resume {
+    width: 100%;
+    max-width: 850px;
+    margin: 30px auto;
+    padding: 48px 55px;
+    background: #ffffff;
+    color: #292929;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 14px;
+    line-height: 1.6;
+    text-align: left;
+    box-shadow: 0 4px 22px rgba(0, 0, 0, 0.15);
+    border: 1px solid #dddddd;
+}
+
+.pr-header {
+    text-align: center;
+    border-bottom: 2px solid #555555;
+    padding-bottom: 18px;
+    margin-bottom: 22px;
+}
+
+.pr-header h1 {
+    font-size: 32px;
+    font-weight: 800;
+    color: #242424;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin: 0 0 6px;
+    overflow-wrap: anywhere;
+}
+
+.pr-header h2 {
+    font-size: 19px;
+    font-weight: 400;
+    color: #444444;
+    margin: 0 0 14px;
+    overflow-wrap: anywhere;
+}
+
+.pr-contact {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px 20px;
+    font-size: 12px;
+    color: #555555;
+    overflow-wrap: anywhere;
+}
+
+.pr-contact span {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+}
+
+.pr-section {
+    margin-bottom: 23px;
+    break-inside: auto;
+}
+
+.pr-section h3 {
+    font-size: 17px;
+    font-weight: 800;
+    letter-spacing: 1.3px;
+    color: #292929;
+    border-bottom: 1px solid #777777;
+    padding-bottom: 7px;
+    margin: 0 0 12px;
+}
+
+.pr-section p {
+    margin: 0 0 9px;
+    color: #333333;
+    overflow-wrap: anywhere;
+    white-space: pre-line;
+}
+
+.pr-entry {
+    padding-left: 2px;
+}
+
+.pr-skills {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 5px 24px;
+    padding-left: 20px;
+    margin-bottom: 0;
+}
+
+.pr-skills li {
+    padding-left: 2px;
+    overflow-wrap: anywhere;
+    break-inside: avoid;
+}
+
+@media (max-width: 600px) {
+    .professional-resume {
+        padding: 25px 20px;
+        font-size: 12px;
+    }
+
+    .pr-header h1 {
+        font-size: 24px;
+    }
+
+    .pr-header h2 {
+        font-size: 16px;
+    }
+
+    .pr-skills {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media print {
+    .professional-resume {
+        width: 100%;
+        max-width: none;
+        margin: 0;
+        padding: 15mm;
+        border: none;
+        box-shadow: none;
+        font-size: 10pt;
+    }
+
+    .pr-header,
+    .pr-section h3 {
+        break-after: avoid;
+    }
+
+    .pr-section {
+        break-inside: auto;
+    }
+
+    .pr-contact {
+        color: #333333;
+    }
+}

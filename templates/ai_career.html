@@ -1,0 +1,157 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+<div class="container mt-5">
+
+    <div class="card shadow-lg p-4">
+
+        <h2 class="text-center mb-4">
+            🤖 AI Career Recommendation
+        </h2>
+
+        <form method="POST">
+
+            <div class="mb-3">
+                <label>Name</label>
+                <input type="text" class="form-control" name="name" required>
+            </div>
+
+            <div class="mb-3">
+                <label>Qualification</label>
+                <select class="form-control" name="qualification">
+                    <option>10th</option>
+                    <option>12th Science</option>
+                    <option>12th Commerce</option>
+                    <option>12th Arts</option>
+                    <option>BCA</option>
+                    <option>BSc</option>
+                    <option>BTech</option>
+                    <option>BBA</option>
+                    <option>MCA</option>
+                </select>
+            </div>
+
+            <div class="mb-3">
+                <label>Favourite Subject</label>
+                <input type="text" class="form-control" name="subject">
+            </div>
+
+            <div class="mb-4">
+                <label class="mb-3"><b>Select Your Interest</b></label>
+
+                <div class="row g-2">
+
+                    <div class="col-md-4">
+                        <input type="radio" class="btn-check" name="interest" id="programming" value="Programming" checked>
+                        <label class="btn btn-outline-info w-100" for="programming">💻 Programming</label>
+                    </div>
+
+                    <div class="col-md-4">
+                        <input type="radio" class="btn-check" name="interest" id="web" value="Web Development">
+                        <label class="btn btn-outline-info w-100" for="web">🌐 Web Development</label>
+                    </div>
+
+                    <div class="col-md-4">
+                        <input type="radio" class="btn-check" name="interest" id="ai" value="Artificial Intelligence">
+                        <label class="btn btn-outline-info w-100" for="ai">🤖 Artificial Intelligence</label>
+                    </div>
+
+                    <div class="col-md-4">
+                        <input type="radio" class="btn-check" name="interest" id="data" value="Data Science">
+                        <label class="btn btn-outline-info w-100" for="data">📊 Data Science</label>
+                    </div>
+
+                    <div class="col-md-4">
+                        <input type="radio" class="btn-check" name="interest" id="cyber" value="Cyber Security">
+                        <label class="btn btn-outline-info w-100" for="cyber">🔐 Cyber Security</label>
+                    </div>
+
+                    <div class="col-md-4">
+                        <input type="radio" class="btn-check" name="interest" id="business" value="Business">
+                        <label class="btn btn-outline-info w-100" for="business">💼 Business</label>
+                    </div>
+
+                    <div class="col-md-4">
+                        <input type="radio" class="btn-check" name="interest" id="medical" value="Medical">
+                        <label class="btn btn-outline-info w-100" for="medical">🩺 Medical</label>
+                    </div>
+
+                    <div class="col-md-4">
+                        <input type="radio" class="btn-check" name="interest" id="design" value="Design">
+                        <label class="btn btn-outline-info w-100" for="design">🎨 Design</label>
+                    </div>
+
+                    <div class="col-md-4">
+                        <input type="radio" class="btn-check" name="interest" id="gov" value="Government Jobs">
+                        <label class="btn btn-outline-info w-100" for="gov">🏛 Government Jobs</label>
+                    </div>
+
+                </div>
+            </div>
+
+            <button class="btn btn-primary w-100">
+                🚀 Get AI Career Suggestion
+            </button>
+
+        </form>
+{% if recommendations %}
+
+<hr class="my-4">
+
+<div class="alert alert-info">
+    <h4>Career Guidance for {{ student_name }}</h4>
+    <p>
+        These options are based on your selected interest.
+        Compare the skills and learning paths before making a decision.
+    </p>
+</div>
+
+<div class="row g-3">
+
+    {% for item in recommendations %}
+
+    <div class="col-md-4">
+
+        <div class="card h-100 shadow-sm">
+
+            <div class="card-body">
+
+                <span class="badge bg-primary mb-2">
+                    Option {{ loop.index }}
+                </span>
+
+                <h4>{{ item.title }}</h4>
+
+                <p>{{ item.reason }}</p>
+
+                <h6>Skills to learn</h6>
+
+                {% for skill in item.skills %}
+                    <span class="badge bg-secondary mb-1">
+                        {{ skill }}
+                    </span>
+                {% endfor %}
+
+                <hr>
+
+                <h6>Suggested learning roadmap</h6>
+
+                <ol>
+                    {% for step in item.roadmap %}
+                        <li class="mb-2">{{ step }}</li>
+                    {% endfor %}
+                </ol>
+
+            </div>
+
+        </div>
+
+    </div>
+
+    {% endfor %}
+
+</div>
+
+{% endif %}
+{% endblock %}
